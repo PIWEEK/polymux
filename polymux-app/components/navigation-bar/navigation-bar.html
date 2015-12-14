@@ -1,15 +1,26 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="polymux-navigation-bar">
+    <style>
+        :host {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            display: block;
+            /*padding: 1rem;*/
+        }
+    </style>
 
-  <template>
-    <p>I'm a navigation-bar</p>
-  </template>
+    <template>
+        <nav>
+            <content>
+            </content>
+        </nav>
+    </template>
 
-  <script>
-    Polymer({
-      is: "polymux-navigation-bar"
-    });
-  </script>
+    <script>
+        Polymer({
+            is: "polymux-navigation-bar"
+        });
+    </script>
 
 </dom-module>

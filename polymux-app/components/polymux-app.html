@@ -1,0 +1,29 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="navigation-bar/navigation-bar.html">
+<link rel="import" href="navigation-bar/tab.html">
+
+<dom-module id="polymux-app">
+    <style>
+        :host {
+            --primary-color: #0E198E;
+            --secondary-color: #B133E4;
+            --text-color: #ffffff;
+        }
+    </style>
+
+    <template>
+        <polymux-navigation-bar>
+            <polymux-tab tab-name="Home"></polymux-tab>
+            <polymux-tab tab-name="Discover"></polymux-tab>
+            <polymux-tab tab-name="Projects" link="index.html"></polymux-tab>
+            <polymux-tab tab-name="Profile" link="index.html"></polymux-tab>
+        </polymux-navigation-bar>
+    </template>
+
+    <script>
+        Polymer({
+            is: "polymux-app"
+        });
+    </script>
+
+</dom-module>

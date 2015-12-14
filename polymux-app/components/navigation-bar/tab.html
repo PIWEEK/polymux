@@ -1,0 +1,42 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="polymux-tab">
+    <style>
+        :host {
+            display: inline-block;
+        }
+        a {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            display: inline-block;
+            padding: 1rem;
+            transition: background .2s;
+            transition-delay: .1s;
+        }
+        a:hover {
+            background-color: var(--secondary-color);
+        }
+    </style>
+
+    <template>
+        <a href="{{link}}" title="Link to {{tabName}}">{{tabName}}</a>
+    </template>
+
+    <script>
+        Polymer({
+            is: "polymux-tab",
+            properties: {
+                // declare the owner property
+                tabName: {
+                    type: String,
+                    value: "Tab"
+                },
+                link: {
+                    type: String,
+                    value: "index.html"
+                }
+            }
+        });
+    </script>
+
+</dom-module>
