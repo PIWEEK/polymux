@@ -1,0 +1,47 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="polymux-logo">
+    <style>
+        :host {
+            display: inline-flex;
+            align-content: center;
+        }
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        img {
+            max-height: 2.5rem;
+        }
+        h1 {
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0;
+        }
+    </style>
+
+    <template>
+        <a href="index.html">
+            <template is="dom-if" if="{{imageUrl}}">
+                <img src="{{imageUrl}}" alt="{{projectName}}" />
+            </template>
+            <h1>{{projectName}}</h1>
+        </a>
+    </template>
+
+    <script>
+        Polymer({
+            is: "polymux-logo",
+            properties: {
+                imageUrl: {
+                    type: String,
+                },
+                projectName: {
+                    type: String,
+                    value: "Project Name"
+                }
+            }
+        });
+    </script>
+
+</dom-module>

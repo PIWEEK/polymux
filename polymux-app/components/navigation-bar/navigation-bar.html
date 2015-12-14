@@ -5,21 +5,45 @@
         :host {
             background-color: var(--primary-color);
             color: var(--text-color);
+            padding: 0 1rem;
             display: block;
-            /*padding: 1rem;*/
+        }
+
+        div {
+            align-items: center;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: space-around;
+        }
+
+        @media screen and (min-width: 48rem) {
+            div {
+                display: flex;
+            }
         }
     </style>
 
     <template>
-        <nav>
+        <div style$="justify-content: {{distribution}}">
             <content>
             </content>
-        </nav>
+        </div>
     </template>
 
     <script>
         Polymer({
-            is: "polymux-navigation-bar"
+            is: "polymux-navigation-bar",
+            properties: {
+                distribution: {
+                    type: String,
+                    value: "flex-start"
+                }
+            }
         });
     </script>
 
