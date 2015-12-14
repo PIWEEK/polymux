@@ -1,0 +1,25 @@
+{
+  "name": "polymux",
+  "homepage": "https://github.com/PIWEEK/polymux",
+  "authors": [
+    "Xavier Julián <xavier.julian@kaleidos.net>"
+  ],
+  "description": "Set of Polymer components to create modular, elegant and simple wireframes",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "polymer",
+    "ux"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "polymux-app",
+  "version": "1.0.0",
+  "description": "Set of Polymer components to create modular, elegant and simple wireframes",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PIWEEK/polymux.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PIWEEK/polymux/issues"
+  },
+  "homepage": "https://github.com/PIWEEK/polymux#readme"
+}
