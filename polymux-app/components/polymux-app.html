@@ -4,6 +4,7 @@
 <link rel="import" href="navigation-bar/tab.html">
 <link rel="import" href="container/container.html">
 <link rel="import" href="block/block.html">
+<link rel="import" href="image/image.html">
 <link rel="import" href="paragraph/paragraph.html">
 
 <dom-module id="polymux-app">
@@ -29,8 +30,9 @@
             </nav>
         </polymux-navigation-bar>
         <polymux-container>
-            <polymux-block title="Header">
-                <polymux-paragraph link="index.html">
+            <polymux-block title="Header" direction="row">
+                <polymux-image url="https://unsplash.it/200/300" width="200" height:"300"></polymux-image>
+                <polymux-paragraph>
                     'I can't help it,' said Alice very meekly: 'I'm growing.' 'You've no right to grow here,' said the Dormouse. 'Don't talk nonsense,' said Alice more boldly: 'you know you're growing  too.' 'Yes, but I grow at a reasonable pace,' said the Dormouse: 'not in
                 </polymux-paragraph>
             </polymux-block>

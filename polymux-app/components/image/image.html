@@ -1,0 +1,53 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+
+<dom-module id="polymux-image" width="{{width}}px" height="{{height}}px">
+
+    <template>
+        <style>
+            :host {
+                flex-shrink: 0 !important;
+            }
+            .image-container
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <div class="image-container" style$="max-width:[[width]]px; max-height:[[height]]px">
+            <template is="dom-if" if="{{url}}">
+                <img src="{{url}}" style$="max-width:[[width]]px; max-height:[[height]]px" alt="Placeholder Image" />
+            </template>
+            <template  is="dom-if" if="{{!url}}">
+                <img src="http://lorempixel.com/{{width}}/{{height}}/{{type}}" alt="{{type}}">
+            </template>
+        </div>
+
+    </template>
+
+    <script>
+        Polymer({
+            is: "polymux-image",
+            restamp: true,
+            properties: {
+                url: {
+                    type: String,
+                    value:""
+                },
+                width: {
+                    type: Number,
+                    value: 640,
+                },
+                height: {
+                    type: Number,
+                    value: 480,
+                },
+                type: {
+                    type: String,
+                    value: "cats",
+                }
+            }
+        });
+    </script>
+
+</dom-module>
