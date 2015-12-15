@@ -1,0 +1,51 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="polymux-block">
+    <style>
+        section {
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .block-item {
+            display: flex;
+        }
+        .block-item > ::content * {
+            padding: 0 .5rem;
+        }
+        .block-item > ::content *:first-child,
+        .block-item > ::content *:last-child {
+            padding: 0;
+        }
+    </style>
+
+    <template>
+        <section>
+            <template is="dom-if" if="{{title}}">
+                <h1>{{title}}</h1>
+            </template>
+            <div class="block-item" style$="justify-content: {{distribution}}; flex-direction: {{direction}};" >
+                <content></content>
+            </div>
+        </section>
+    </template>
+
+    <script>
+        Polymer({
+            is: "polymux-block",
+            properties: {
+                title: {
+                    type: String
+                },
+                distribution: {
+                    type: String,
+                    value: "flex-start"
+                },
+                direction: {
+                    type: String,
+                    value: "column"
+                }
+            }
+        });
+    </script>
+
+</dom-module>

@@ -3,13 +3,16 @@
 <link rel="import" href="logo/logo.html">
 <link rel="import" href="navigation-bar/tab.html">
 <link rel="import" href="container/container.html">
+<link rel="import" href="block/block.html">
+<link rel="import" href="paragraph/paragraph.html">
 
 <dom-module id="polymux-app">
     <style>
         :host {
             --primary-color: #3465a4;
             --secondary-color: #ad7fa8;
-            --text-color: #ffffff;
+            --text-color: #000;
+            --text-invert-color: #fff;
             --success-color: #73d216;
             --warning-color: #fcaf3ef;
             --error-color: #cc0000;
@@ -26,7 +29,11 @@
             </nav>
         </polymux-navigation-bar>
         <polymux-container>
-            Text
+            <polymux-block title="Header">
+                <polymux-paragraph link="index.html">
+                    'I can't help it,' said Alice very meekly: 'I'm growing.' 'You've no right to grow here,' said the Dormouse. 'Don't talk nonsense,' said Alice more boldly: 'you know you're growing  too.' 'Yes, but I grow at a reasonable pace,' said the Dormouse: 'not in
+                </polymux-paragraph>
+            </polymux-block>
         </polymux-container>
     </template>
 
