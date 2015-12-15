@@ -1,0 +1,30 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="polymux-container">
+    <style>
+        section {
+            margin: 0 auto;
+            padding: 1rem;
+            width: 100%;
+        }
+    </style>
+
+    <template>
+        <section style$="max-width: {{width}};">
+            <content></content>
+        </section>
+    </template>
+
+    <script>
+        Polymer({
+            is: "polymux-container",
+            properties: {
+                width: {
+                    type: String,
+                    value: "1200px"
+                }
+            }
+        });
+    </script>
+
+</dom-module>
