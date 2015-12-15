@@ -21,8 +21,8 @@
         }
     </style>
 
-    <template>
-        <polymux-notification level="warning" display="visible">
+    <template is="dom-bind">
+        <polymux-notification level="warning">
             'I can't help it,'
         </polymux-notification>
         <polymux-navigation-bar distribution="space-between">
@@ -45,7 +45,13 @@
 
     <script>
         Polymer({
-            is: "polymux-app"
+            is: "polymux-app",
+            listeners: {
+                'toggleNotification': '_listened'
+            },
+            _listened: function() {
+                console.log(document.querySelector('polymux-notification').toggleNotification());
+            }
         });
     </script>
 
