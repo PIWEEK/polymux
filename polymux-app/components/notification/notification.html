@@ -1,0 +1,79 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="polymux-notification">
+
+    <template>
+        <style>
+            :host {
+                display: none;
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+
+            :host.visible {
+                display: block;
+            }
+            div {
+                background: var(--secondary-color);
+                opacity: .9;
+                display: flex;
+                padding: 2rem;
+            }
+
+            .text {
+                flex: 1;
+                color: var(--text-invert-color);
+                text-align: center;
+            }
+
+            .close {
+                display: inline-block;
+                margin-left: auto;
+                cursor: pointer;
+            }
+
+            .success {
+                background: var(--success-color);
+            }
+
+            .warning {
+                background: var(--warning-color);
+            }
+
+            .error {
+                background: var(--error-color);
+            }
+        </style>
+        <div class$="{{level}}">
+            <span class="text">
+                <content></content>
+            </span>
+            <a href="#" on-click="_closeNotification" class="close">Close</span>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: "polymux-notification",
+            properties: {
+                level: {
+                    type: String
+                }
+            },
+            attached: function() {
+                if(this.getAttribute('display') === 'visible') {
+                   this.toggleNotification();
+                }
+            },
+            _closeNotification: function(event) {
+                event.preventDefault();
+                this.toggleClass('visible');
+            },
+            toggleNotification: function() {
+                this.toggleClass('visible');
+            }
+        });
+    </script>
+
+</dom-module>

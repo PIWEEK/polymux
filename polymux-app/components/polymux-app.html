@@ -6,6 +6,7 @@
 <link rel="import" href="block/block.html">
 <link rel="import" href="image/image.html">
 <link rel="import" href="paragraph/paragraph.html">
+<link rel="import" href="notification/notification.html">
 
 <dom-module id="polymux-app">
     <style>
@@ -15,12 +16,15 @@
             --text-color: #000;
             --text-invert-color: #fff;
             --success-color: #73d216;
-            --warning-color: #fcaf3ef;
+            --warning-color: #fcaf3e;
             --error-color: #cc0000;
         }
     </style>
 
     <template>
+        <polymux-notification level="warning" display="visible">
+            'I can't help it,'
+        </polymux-notification>
         <polymux-navigation-bar distribution="space-between">
             <polymux-logo project-name="polymux"></polymux-logo>
             <nav>
