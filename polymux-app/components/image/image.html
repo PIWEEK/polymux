@@ -46,13 +46,6 @@
                     type: String,
                     value: "cats",
                 }
-            },
-            listeners: {
-                'tap': 'sendNotification'
-            },
-            sendNotification: function(e) {
-                console.log('Notfying');
-                this.fire('toggleNotification');
             }
         });
     </script>

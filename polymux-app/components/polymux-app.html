@@ -7,8 +7,10 @@
 <link rel="import" href="image/image.html">
 <link rel="import" href="paragraph/paragraph.html">
 <link rel="import" href="notification/notification.html">
+<link rel="import" href="button/button.html">
 
 <dom-module id="polymux-app">
+
     <style>
         :host {
             --primary-color: #3465a4;
@@ -20,9 +22,8 @@
             --error-color: #cc0000;
         }
     </style>
-
-    <template is="dom-bind">
-        <polymux-notification level="warning">
+    <template>
+        <polymux-notification level="error">
             'I can't help it,'
         </polymux-notification>
         <polymux-navigation-bar distribution="space-between">
@@ -39,6 +40,10 @@
                 <polymux-paragraph>
                     'I can't help it,' said Alice very meekly: 'I'm growing.' 'You've no right to grow here,' said the Dormouse. 'Don't talk nonsense,' said Alice more boldly: 'you know you're growing  too.' 'Yes, but I grow at a reasonable pace,' said the Dormouse: 'not in
                 </polymux-paragraph>
+                <polymux-image type="people"></polymux-image>
+            </polymux-block>
+            <polymux-block>
+                <polymux-button title="Test" type="warning" action="toggleNotification"></polymux-button>
             </polymux-block>
         </polymux-container>
     </template>
@@ -47,10 +52,13 @@
         Polymer({
             is: "polymux-app",
             listeners: {
-                'toggleNotification': '_listened'
+                'buttonFire': '_buttonAction'
             },
-            _listened: function() {
-                console.log(document.querySelector('polymux-notification').toggleNotification());
+            _buttonAction: function(e) {
+                var action = e.detail.action;
+                if(e.detail.action === 'toggleNotification') {
+                    document.querySelector('polymux-notification')[action]();
+                }
             }
         });
     </script>

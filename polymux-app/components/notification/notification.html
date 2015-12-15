@@ -49,7 +49,7 @@
             <span class="text">
                 <content></content>
             </span>
-            <a href="#" on-click="_closeNotification" class="close">Close</span>
+            <a href="#" on-click="toggleNotification" class="close">Close</span>
         </div>
     </template>
 
@@ -63,14 +63,10 @@
             },
             attached: function() {
                 if(this.getAttribute('display') === 'visible') {
-                   this._toggleNotification();
+                   this.toggleNotification();
                 }
             },
-            _closeNotification: function(event) {
-                event.preventDefault();
-                this.toggleClass('visible');
-            },
-            toggleNotification: function() {
+            toggleNotification: function(detail) {
                 this.toggleClass('visible');
             }
         });

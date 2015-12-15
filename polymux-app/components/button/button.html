@@ -1,0 +1,44 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="polymux-button">
+    <style>
+        a {
+            background: var(--primary-color);
+            display: inline-block;
+            padding: 1rem 2rem;
+            color: var(--text-invert-color);
+        }
+    </style>
+
+    <template>
+        <a href="#" title="{{title}}">{{title}}</a>
+    </template>
+
+    <script>
+        Polymer({
+            is: "polymux-button",
+            properties: {
+                title: {
+                    type: String
+                },
+                type: {
+                    type: String
+                },
+                action: {
+                    type: String
+                },
+
+            },
+            listeners: {
+                'tap': 'sendNotification'
+            },
+            sendNotification: function(e) {
+                this.fire('buttonFire', {
+                    title: this.title,
+                    level: this.type,
+                    action: this.action,
+                });
+            }
+        });
+    </script>
+</dom-module>
