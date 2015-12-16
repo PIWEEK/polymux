@@ -1,0 +1,102 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../shared-styles/shared-styles.html">
+
+<dom-module id="polymux-input">
+    <style include="shared-styles"></style>
+    <template>
+        <style>
+            fieldset {
+                margin-bottom: 1rem;
+                padding: 0;
+                border: none;
+            }
+
+            label {
+                display: block;
+            }
+            input[type="submit"] {
+                color: var(--text-invert-color);
+                outline: 0 none;
+                padding: .5rem 0px .5rem .5rem;
+                width: 90%;
+                border-radius: 4px;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                border: 0;
+                background: var(--primary-color);
+            }
+            input[type="submit"]:hover {
+                background: var(--secondary-color);
+                transition: background .2s;
+            }
+            input[type="submit"]:disabled {
+                background: var(--disabled-color);
+            }
+            input[type="text"],
+            input[type="email"],
+            input[type="number"],
+            input[type="password"] {
+                border: 1px solid var(--primary-color);
+                color: var(--text-color);
+                outline: 0 none;
+                padding: .5rem 0px .5rem .5rem;
+                width: 90%;
+                border-radius: 4px;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            }
+
+            input[type="color"] {
+                cursor: crosshair;
+                display: block;
+                width: 90%;
+                min-height: 3rem;
+                padding: 0;
+                margin: 0;
+                border: 0;
+            }
+            input[type="color"]:disabled {
+                opacity: .2;
+            }
+        </style>
+        <fieldset>
+            <label for="{{name}}">{{name}}</label>
+            <input id={{name}} type="{{type}}" placeholder="{{placeholder}}">
+        </fieldset>
+    </template>
+
+    <script>
+        Polymer({
+            is: "polymux-input",
+            properties: {
+                type: { //text | color | email | number | password | date
+                    type: String,
+                    value: "text"
+                },
+                name: {
+                    type: String
+                },
+                placeholder: {
+                    type: String,
+                    value: "Add a placeholder attribute for a custom placeholder"
+                },
+                disabled: {
+                    type: Boolean
+                },
+                required: {
+                    type: Boolean
+                },
+            },
+            ready: function() {
+                console.log(this);
+                if (this.hasAttribute('disabled')) {
+                    input = Polymer.dom(this.root).querySelector('input');
+                    input.setAttribute('disabled', "");
+                };
+                if (this.hasAttribute('required')) {
+                    input = Polymer.dom(this.root).querySelector('input');
+                    input.setAttribute('required', "");
+                };
+            }
+        });
+    </script>
+
+</dom-module>

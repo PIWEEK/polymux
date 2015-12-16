@@ -1,0 +1,36 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../shared-styles/shared-styles.html">
+
+<dom-module id="polymux-form">
+    <style include="shared-styles"></style>
+    <style>
+        :host {
+            margin: 0 auto;
+            padding: 1rem;
+            width: 100%;
+        }
+    </style>
+
+    <template>
+        <form role="form" action="{{action}}">
+            <h1>{{title}}</h1>
+            <content></content>
+        </form>
+    </template>
+
+    <script>
+        Polymer({
+            is: "polymux-form",
+            properties: {
+                action: {
+                    type: String,
+                    value: "index.html"
+                },
+                title: {
+                    type: String
+                }
+            }
+        });
+    </script>
+
+</dom-module>

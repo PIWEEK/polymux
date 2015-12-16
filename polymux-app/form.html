@@ -10,8 +10,7 @@
 <body>
     <polymux-app>
         <polymux-notification></polymux-notification>
-        <polymux-dialog id="login-dialog" message="Login">
-        </polymux-dialog>
+        <polymux-dialog id="login-dialog" message="Login"></polymux-dialog>
         <polymux-navigation-bar distribution="space-between">
             <polymux-logo project-name="polymux"></polymux-logo>
             <nav>
@@ -20,8 +19,13 @@
             </nav>
         </polymux-navigation-bar>
         <polymux-container width="600px">
-            <polymux-form>
-                
+            <polymux-form title="Custom Form">
+                <polymux-input name="text" required></polymux-input>
+                <polymux-input type="color" name="color"></polymux-input>
+                <polymux-input type="number" name="number"></polymux-input>
+                <polymux-input type="email" name="email" autocomplete></polymux-input>
+                <polymux-input type="password" name="password"></polymux-input>
+                <polymux-input type="submit" disabled></polymux-input>
             </polymux-form>
         </polymux-container>
     </polymux-app>

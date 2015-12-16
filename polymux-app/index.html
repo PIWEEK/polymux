@@ -10,9 +10,8 @@
 <body>
     <polymux-app>
         <polymux-notification></polymux-notification>
-        <polymux-dialog id="login-dialog" message="Login">
-
-        </polymux-dialog>
+        <polymux-dialog id="login-dialog" message="Login"></polymux-dialog>
+        <polymux-dialog id="other-dialog"></polymux-dialog>
         <polymux-navigation-bar distribution="space-between">
             <polymux-logo project-name="polymux"></polymux-logo>
             <nav>
@@ -22,15 +21,15 @@
         </polymux-navigation-bar>
         <polymux-container>
             <polymux-block title="Header" direction="row">
-                <polymux-image type="people" height="350"></polymux-image>
+                <polymux-image type="nightlife" height="350"></polymux-image>
                 <polymux-paragraph>
                     'I can't help it,' said Alice very meekly: 'I'm growing.' 'You've no right to grow here,' said the Dormouse. 'Don't talk nonsense,' said Alice more boldly: 'you know you're growing too.' 'Yes, but I grow at a reasonable pace,' said the Dormouse: 'not
                     in
                 </polymux-paragraph>
             </polymux-block>
             <polymux-block distribution="flex-start" direction="row">
-                <polymux-button title="Notification" level="warning" notify="polymux-notification" notify-message="This is an amazing notification message"></polymux-button>
-                <polymux-button level="success" title="Dialog" notify="polymux-dialog" notify-message="This is an amazing dialog"></polymux-button>
+                <polymux-button title="Notification" level="error" notify="polymux-notification" notify-message="This is an amazing notification message"></polymux-button>
+                <polymux-button level="success" title="Dialog" notify="#other-dialog" notify-message="This is an amazing dialog"></polymux-button>
             </polymux-block>
         </polymux-container>
     </polymux-app>
