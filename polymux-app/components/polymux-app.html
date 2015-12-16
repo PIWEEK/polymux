@@ -7,6 +7,7 @@
 <link rel="import" href="image/image.html">
 <link rel="import" href="paragraph/paragraph.html">
 <link rel="import" href="notification/notification.html">
+<link rel="import" href="dialog/dialog.html">
 <link rel="import" href="button/button.html">
 
 <dom-module id="polymux-app">
@@ -24,6 +25,12 @@
     </style>
     <template>
         <polymux-notification></polymux-notification>
+        <polymux-dialog>
+            <polymux-image type="people" width="800" height="200"></polymux-image>
+            <polymux-paragraph>
+                'I can't help it,' said Alice very meekly: 'I'm growing.' 'You've no right to grow here,' said the Dormouse. 'Don't talk nonsense,' said Alice more boldly: 'you know you're growing  too.' 'Yes, but I grow at a reasonable pace,' said the Dormouse: 'not in
+            </polymux-paragraph>
+        </polymux-dialog>
         <polymux-navigation-bar distribution="space-between">
             <polymux-logo project-name="polymux"></polymux-logo>
             <nav>
@@ -34,14 +41,15 @@
         </polymux-navigation-bar>
         <polymux-container>
             <polymux-block title="Header" direction="row">
-                <polymux-image url="https://unsplash.it/200/300" width="200" height:"300"></polymux-image>
+                <polymux-image width="200" height="300"></polymux-image>
                 <polymux-paragraph>
                     'I can't help it,' said Alice very meekly: 'I'm growing.' 'You've no right to grow here,' said the Dormouse. 'Don't talk nonsense,' said Alice more boldly: 'you know you're growing  too.' 'Yes, but I grow at a reasonable pace,' said the Dormouse: 'not in
                 </polymux-paragraph>
                 <polymux-image type="people"></polymux-image>
             </polymux-block>
-            <polymux-block>
-                <polymux-button title="Test" level="warning" notify="polymux-notification" notify-message="This is an amazing notification message"></polymux-button>
+            <polymux-block distribution="flex-start" direction="row">
+                <polymux-button title="Notification" notify="polymux-notification" notify-message="This is an amazing notification message"></polymux-button>
+                <polymux-button title="Dialog" notify="polymux-dialog" notify-message="This is an amazing dialog"></polymux-button>
             </polymux-block>
         </polymux-container>
     </template>

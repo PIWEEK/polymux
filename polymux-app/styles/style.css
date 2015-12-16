@@ -3,3 +3,7 @@ body {
     font-family: 'Kalam', cursive;
     line-height: 1.5;
 }
+
+* {
+    box-sizing: border-box;
+}

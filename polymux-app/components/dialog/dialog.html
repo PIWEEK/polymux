@@ -1,0 +1,73 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="polymux-dialog">
+
+    <style>
+        :host {
+            display: none;
+        }
+        :host.visible {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99;
+            background: rgba(0,0,0, 0.3);;
+        }
+        .lightbox {
+            background: white;
+            max-width: 800px;
+            width: 90vw;
+            height: 80vh;
+            margin: 4vh 4vw;
+            position: relative;
+            padding: 2vw;
+        }
+        h1 {
+            text-align: center;
+        }
+        a.close {
+            position: absolute;
+            top: 1%;
+            right: 1%;
+        }
+    </style>
+    <template>
+        <div class="lightbox">
+            <h1>{{message}}</h1>
+            <content></content>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: "polymux-dialog",
+            properties: {
+                message: {
+                    type: String,
+                    value: ""
+                },
+                display: {
+                    type: String,
+                }
+            },
+            attached: function() {
+                if(this.getAttribute('display') === 'visible') {
+                   this.toggleClass('visible');
+                }
+            },
+            listeners: {
+                'tap': 'toggle',
+            },
+            toggle: function(detail) {
+                this.message = detail.notifyMessage;
+                this.toggleClass('visible');
+            }
+        });
+    </script>
+
+</dom-module>

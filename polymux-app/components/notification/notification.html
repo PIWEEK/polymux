@@ -55,7 +55,6 @@
         </style>
         <div class$="{{level}}">
             <span class="text">{{message}}</span>
-            <a href="#" on-click="toggle" class="close">Close</span>
         </div>
     </template>
 
@@ -78,6 +77,9 @@
                 if(this.getAttribute('display') === 'visible') {
                    this.toggleClass('visible');
                 }
+            },
+            listeners: {
+                'tap': 'toggle',
             },
             toggle: function(detail) {
                 if(detail.level) {

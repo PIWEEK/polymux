@@ -2,6 +2,9 @@
 
 <dom-module id="polymux-button">
     <style>
+        :host {
+            flex-grow: 0 !important;
+        }
         a {
             background: var(--primary-color);
             display: inline-block;
@@ -38,11 +41,10 @@
                     type: String
                 },
                 link: {
-                    type: String,
-                    value: "index.html"
+                    type: String
                 },
                 notifyMessage: {
-                    type: String,
+                    type: String
                 }
             },
             listeners: {
