@@ -1,13 +1,15 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../shared-styles/shared-styles.html">
 
 <dom-module id="polymux-paragraph">
-    <style>
-        a {
-            color: var(--text-color);
-        }
-    </style>
 
     <template>
+        <style include="shared-styles"></style>
+        <style>
+            a {
+                color: var(--text-color);
+            }
+        </style>
         <template is="dom-if" if="{{link}}">
             <a href="{{link}}" title="Link to {{link}}">
                 <content></content>

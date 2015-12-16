@@ -1,34 +1,36 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../shared-styles/shared-styles.html">
 
 <dom-module id="polymux-navigation-bar">
-    <style>
-        :host {
-            background-color: var(--primary-color);
-            color: var(--text-invert-color);
-            padding: 0 1rem;
-            display: block;
-        }
-
-        div {
-            align-items: center;
-            display: block;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            align-content: center;
-            justify-content: space-around;
-        }
-
-        @media screen and (min-width: 48rem) {
-            div {
-                display: flex;
-            }
-        }
-    </style>
 
     <template>
+        <style include="shared-styles"></style>
+        <style>
+            :host {
+                background-color: var(--primary-color);
+                color: var(--text-invert-color);
+                padding: 0 1rem;
+                display: block;
+            }
+
+            div {
+                align-items: center;
+                display: block;
+            }
+
+            nav {
+                display: flex;
+                align-items: center;
+                align-content: center;
+                justify-content: space-around;
+            }
+
+            @media screen and (min-width: 48rem) {
+                div {
+                    display: flex;
+                }
+            }
+        </style>
         <div style$="justify-content: {{distribution}}">
             <content>
             </content>

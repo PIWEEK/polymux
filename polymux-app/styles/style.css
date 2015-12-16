@@ -1,13 +1,10 @@
-html,
-body {
+html, body {
     font-family: 'Kalam', cursive;
     line-height: 1.5;
 }
-
 * {
     box-sizing: border-box;
 }
-
 @keyframes dropdownFade {
     0% {
         opacity: 0;

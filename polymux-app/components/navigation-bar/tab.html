@@ -1,26 +1,28 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../shared-styles/shared-styles.html">
 
 <dom-module id="polymux-tab">
-    <style>
-        :host {
-            display: inline-block;
-            cursor: pointer;
-        }
-        a {
-            background-color: var(--primary-color);
-            color: var(--text-invert-color);
-            display: inline-block;
-            padding: 1rem;
-            text-decoration: none;
-            transition: background .2s;
-            transition-delay: .1s;
-        }
-        a:hover {
-            background-color: var(--secondary-color);
-        }
-    </style>
 
     <template>
+        <style include="shared-styles"></style>
+        <style>
+            :host {
+                display: inline-block;
+                cursor: pointer;
+            }
+            a {
+                background-color: var(--primary-color);
+                color: var(--text-invert-color);
+                display: inline-block;
+                padding: 1rem;
+                text-decoration: none;
+                transition: background .2s;
+                transition-delay: .1s;
+            }
+            a:hover {
+                background-color: var(--secondary-color);
+            }
+        </style>
         <a href="{{link}}" title="Link to {{tabName}}">{{tabName}}</a>
     </template>
 

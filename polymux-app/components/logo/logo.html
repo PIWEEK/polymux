@@ -1,26 +1,31 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../shared-styles/shared-styles.html">
 
 <dom-module id="polymux-logo">
-    <style>
-        :host {
-            display: inline-flex;
-            align-content: center;
-        }
-        a {
-            color: var(--text-invert-color);
-            text-decoration: none;
-        }
-        img {
-            max-height: 2.5rem;
-        }
-        h1 {
-            font-weight: 700;
-            text-transform: uppercase;
-            margin: 0;
-        }
-    </style>
 
     <template>
+        <style include="shared-styles"></style>
+        <style>
+            :host {
+                display: inline-flex;
+                align-content: center;
+            }
+
+            a {
+                color: var(--text-invert-color);
+                text-decoration: none;
+            }
+
+            img {
+                max-height: 2.5rem;
+            }
+
+            h1 {
+                font-weight: 700;
+                text-transform: uppercase;
+                margin: 0;
+            }
+        </style>
         <a href="index.html">
             <template is="dom-if" if="{{imageUrl}}">
                 <img src="{{imageUrl}}" alt="{{projectName}}" />

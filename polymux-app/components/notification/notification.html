@@ -1,8 +1,10 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../shared-styles/shared-styles.html">
 
 <dom-module id="polymux-notification">
 
     <template>
+        <style include="shared-styles"></style>
         <style>
             :host {
                 display: none;
@@ -16,12 +18,14 @@
                 display: block;
                 animation: dropdownFade .3s;
             }
+
             div {
                 background: var(--secondary-color);
                 opacity: .9;
                 display: flex;
                 padding: 2rem;
             }
+
             .text {
                 flex: 1;
                 color: var(--text-invert-color);
@@ -76,15 +80,15 @@
                 }
             },
             attached: function() {
-                if(this.getAttribute('display') === 'visible') {
-                   this.toggleClass('visible');
+                if (this.getAttribute('display') === 'visible') {
+                    this.toggleClass('visible');
                 }
             },
             listeners: {
                 'tap': 'toggle',
             },
             toggle: function(detail) {
-                if(detail.level) {
+                if (detail.level) {
                     this.level = detail.level;
                     this.message = detail.notifyMessage;
                     this.toggleClass('visible');
