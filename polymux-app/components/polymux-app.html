@@ -43,7 +43,7 @@
                 <polymux-image type="people"></polymux-image>
             </polymux-block>
             <polymux-block>
-                <polymux-button title="Test" type="warning" action="toggleNotification"></polymux-button>
+                <polymux-button title="Test" type="warning" notify="polymux-notification"></polymux-button>
             </polymux-block>
         </polymux-container>
     </template>
@@ -52,12 +52,12 @@
         Polymer({
             is: "polymux-app",
             listeners: {
-                'buttonFire': '_buttonAction'
+                'sendNotification': '_dispatchNotification'
             },
-            _buttonAction: function(e) {
-                var action = e.detail.action;
-                var fn = document.querySelector('polymux-notification')[action];
-                if(action === 'toggleNotification' && typeof fn === "function") {
+            _dispatchNotification: function(e) {
+                var element = e.detail.notify;
+                var fn = document.querySelector(element)['toggle']();
+                if(typeof fn === "function") {
                     fn();
                 }
             }
