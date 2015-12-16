@@ -11,8 +11,8 @@
                 cursor: pointer;
             }
             a {
-                background-color: var(--primary-color);
-                color: var(--text-invert-color);
+                background-color: var(--primary-color, #333);
+                color: var(--text-invert-color, #fff);
                 display: inline-block;
                 padding: 1rem;
                 text-decoration: none;
@@ -20,7 +20,7 @@
                 transition-delay: .1s;
             }
             a:hover {
-                background-color: var(--secondary-color);
+                background-color: var(--secondary-color, #999);
             }
         </style>
         <a href="{{link}}" title="Link to {{tabName}}">{{tabName}}</a>

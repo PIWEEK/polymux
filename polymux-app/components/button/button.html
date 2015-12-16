@@ -12,23 +12,23 @@
             }
 
             a {
-                background: var(--primary-color);
+                background: var(--primary-color, #333);
                 border-radius: 4px;
                 display: inline-block;
                 padding: 1rem 2rem;
-                color: var(--text-invert-color);
+                color: var(--text-invert-color, #fff);
             }
 
             a.success {
-                background: var(--success-color);
+                background: var(--success-color, #73d216);
             }
 
             a.warning {
-                background: var(--warning-color);
+                background: var(--warning-color, #fcaf3ef);
             }
 
             a.error {
-                background: var(--error-color);
+                background: var(--error-color, #cc0000);
             }
         </style>
         <a href$="{{link}}" class$="{{level}}" title="{{title}}">{{title}}</a>
