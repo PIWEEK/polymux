@@ -23,9 +23,7 @@
         }
     </style>
     <template>
-        <polymux-notification level="error">
-            'I can't help it,'
-        </polymux-notification>
+        <polymux-notification></polymux-notification>
         <polymux-navigation-bar distribution="space-between">
             <polymux-logo project-name="polymux"></polymux-logo>
             <nav>
@@ -43,7 +41,7 @@
                 <polymux-image type="people"></polymux-image>
             </polymux-block>
             <polymux-block>
-                <polymux-button title="Test" type="warning" notify="polymux-notification"></polymux-button>
+                <polymux-button title="Test" level="warning" notify="polymux-notification" notify-message="This is an amazing notification message"></polymux-button>
             </polymux-block>
         </polymux-container>
     </template>
@@ -56,7 +54,7 @@
             },
             _dispatchNotification: function(e) {
                 var element = e.detail.notify;
-                var fn = document.querySelector(element)['toggle']();
+                var fn = document.querySelector(element)['toggle'](e.detail);
                 if(typeof fn === "function") {
                     fn();
                 }

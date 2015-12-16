@@ -8,10 +8,19 @@
             padding: 1rem 2rem;
             color: var(--text-invert-color);
         }
+        a.success {
+            background: var(--success-color);
+        }
+        a.warning {
+            background: var(--warning-color);
+        }
+        a.error {
+            background: var(--error-color);
+        }
     </style>
 
     <template>
-        <a href="#" title="{{title}}">{{title}}</a>
+        <a href$="{{link}}" class$="{{level}}" title="{{title}}">{{title}}</a>
     </template>
 
     <script>
@@ -19,24 +28,32 @@
             is: "polymux-button",
             properties: {
                 title: {
-                    type: String
+                    type: String,
+                    value: "button"
                 },
-                type: {
+                level: {
                     type: String
                 },
                 notify: {
                     type: String
                 },
-
+                link: {
+                    type: String,
+                    value: "index.html"
+                },
+                notifyMessage: {
+                    type: String,
+                }
             },
             listeners: {
                 'tap': 'sendNotification'
             },
             sendNotification: function(e) {
+                e.preventDefault();
                 this.fire('sendNotification', {
+                    level: this.level,
                     notify: this.notify,
-                    level: this.type,
-                    action: this.action,
+                    notifyMessage: this.notifyMessage
                 });
             }
         });

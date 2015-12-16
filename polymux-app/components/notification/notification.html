@@ -20,7 +20,6 @@
                 display: flex;
                 padding: 2rem;
             }
-
             .text {
                 flex: 1;
                 color: var(--text-invert-color);
@@ -42,13 +41,20 @@
             }
 
             .error {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
                 background: var(--error-color);
+                font-size: 3rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         </style>
         <div class$="{{level}}">
-            <span class="text">
-                <content></content>
-            </span>
+            <span class="text">{{message}}</span>
             <a href="#" on-click="toggle" class="close">Close</span>
         </div>
     </template>
@@ -59,15 +65,30 @@
             properties: {
                 level: {
                     type: String
+                },
+                message: {
+                    type: String,
+                    value: ""
+                },
+                display: {
+                    type: String,
                 }
             },
             attached: function() {
                 if(this.getAttribute('display') === 'visible') {
-                   this.toggleNotification();
+                   this.toggleClass('visible');
                 }
             },
             toggle: function(detail) {
-                this.toggleClass('visible');
+                if(detail.level) {
+                    this.level = detail.level;
+                    this.message = detail.notifyMessage;
+                    this.toggleClass('visible');
+                } else {
+                    this.level = "";
+                    this.message = detail.notifyMessage;
+                    this.toggleClass('visible');
+                }
             }
         });
     </script>
