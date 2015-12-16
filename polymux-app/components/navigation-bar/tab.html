@@ -4,6 +4,7 @@
     <style>
         :host {
             display: inline-block;
+            cursor: pointer;
         }
         a {
             background-color: var(--primary-color);
@@ -32,9 +33,28 @@
                     value: "Tab"
                 },
                 link: {
-                    type: String,
-                    value: "index.html"
+                    type: String
+                },
+                level: {
+                    type: String
+                },
+                notify: {
+                    type: String
+                },
+                notifyMessage: {
+                    type: String
                 }
+            },
+            listeners: {
+                'tap': 'sendNotification'
+            },
+            sendNotification: function(e) {
+                e.preventDefault();
+                this.fire('sendNotification', {
+                    level: this.level,
+                    notify: this.notify,
+                    notifyMessage: this.notifyMessage
+                });
             }
         });
     </script>
