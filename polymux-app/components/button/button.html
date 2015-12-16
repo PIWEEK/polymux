@@ -30,6 +30,10 @@
             a.error {
                 background: var(--error-color, #cc0000);
             }
+            a.disabled {
+                cursor: not-allowed;
+                background: var(--disabled-color, #ccc);
+            }
         </style>
         <a href$="{{link}}" class$="{{level}}" title="{{title}}">{{title}}</a>
     </template>
@@ -53,6 +57,12 @@
                 },
                 notifyMessage: {
                     type: String
+                }
+            },
+            attached: function() {
+                if(this.getAttribute('level') === 'disabled') {
+                   this.removeAttribute('link');
+                   this.removeAttribute('notify');
                 }
             },
             listeners: {

@@ -51,12 +51,14 @@
                 'tap': 'sendNotification'
             },
             sendNotification: function(e) {
-                e.preventDefault();
-                this.fire('sendNotification', {
-                    level: this.level,
-                    notify: this.notify,
-                    notifyMessage: this.notifyMessage
-                });
+                if(!e.target.closest('polymux-tab').hasAttribute('link')) {
+                    e.preventDefault();
+                    this.fire('sendNotification', {
+                        level: this.level,
+                        notify: this.notify,
+                        notifyMessage: this.notifyMessage
+                    });
+                }
             }
         });
     </script>

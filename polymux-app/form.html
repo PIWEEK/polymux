@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="import" href="partials/head.html">
+    <title>Polymux</title>
+    <link rel="import" href="partials/components.html">
+</head>
+
+<body>
+    <polymux-app>
+        <polymux-notification></polymux-notification>
+        <polymux-dialog id="login-dialog" message="Login">
+        </polymux-dialog>
+        <polymux-navigation-bar distribution="space-between">
+            <polymux-logo project-name="polymux"></polymux-logo>
+            <nav>
+                <polymux-tab tab-name="Form" link="form.html"></polymux-tab>
+                <polymux-tab tab-name="Login" notify="#login-dialog"></polymux-tab>
+            </nav>
+        </polymux-navigation-bar>
+        <polymux-container width="600px">
+            <polymux-form>
+                
+            </polymux-form>
+        </polymux-container>
+    </polymux-app>
+</body>
+
+</html>

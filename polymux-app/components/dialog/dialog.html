@@ -5,10 +5,8 @@
     <style>
         :host {
             display: none;
-            animation: dropdownFade .3s;
         }
         :host.visible {
-            animation: dropdownFade .3s;
             animation-direction: alternate;
             position: fixed;
             top: 0;
@@ -21,7 +19,8 @@
             z-index: 99;
             background: rgba(0,0,0, 0.3);
         }
-        .lightbox {
+        :host.visible .lightbox {
+            animation: dropdownFade .3s;
             background: white;
             box-shadow: 0 0 10px rgba(0,0,0, .4);
             max-width: 800px;
@@ -68,7 +67,9 @@
                 'tap': 'toggle',
             },
             toggle: function(detail) {
-                this.message = detail.notifyMessage;
+                if(!this.hasAttribute('message')) {
+                    this.message = detail.notifyMessage;
+                }
                 this.toggleClass('visible');
             }
         });
