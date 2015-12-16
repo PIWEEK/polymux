@@ -5,8 +5,11 @@
     <style>
         :host {
             display: none;
+            animation: dropdownFade .3s;
         }
         :host.visible {
+            animation: dropdownFade .3s;
+            animation-direction: alternate;
             position: fixed;
             top: 0;
             left: 0;

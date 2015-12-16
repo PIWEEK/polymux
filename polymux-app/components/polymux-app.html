@@ -14,8 +14,8 @@
 
     <style>
         :host {
-            --primary-color: #3465a4;
-            --secondary-color: #ad7fa8;
+            --primary-color: #333;
+            --secondary-color: #999;
             --text-color: #000;
             --text-invert-color: #fff;
             --success-color: #73d216;
@@ -26,25 +26,25 @@
     <template>
         <polymux-notification></polymux-notification>
         <polymux-dialog></polymux-dialog>
+        <polymux-dialog id="secondary-dialog" message="Secondary dialog"></polymux-dialog>
         <polymux-navigation-bar distribution="space-between">
             <polymux-logo project-name="polymux"></polymux-logo>
             <nav>
-                <polymux-tab tab-name="Discover" notify="polymux-dialog" notify-message="This is an amazing dialog from a tab"
-                ></polymux-tab>
+                <polymux-tab tab-name="Discover" notify="#secondary-dialog"></polymux-tab>
                 <polymux-tab tab-name="Projects" link="index.html"></polymux-tab>
                 <polymux-tab tab-name="Profile" link="index.html"></polymux-tab>
             </nav>
         </polymux-navigation-bar>
         <polymux-container>
             <polymux-block title="Header" direction="row">
-                <polymux-image width="200" height="300"></polymux-image>
+                <polymux-image></polymux-image>
                 <polymux-paragraph>
                     'I can't help it,' said Alice very meekly: 'I'm growing.' 'You've no right to grow here,' said the Dormouse. 'Don't talk nonsense,' said Alice more boldly: 'you know you're growing  too.' 'Yes, but I grow at a reasonable pace,' said the Dormouse: 'not in
                 </polymux-paragraph>
-                <polymux-image type="people"></polymux-image>
             </polymux-block>
             <polymux-block distribution="flex-start" direction="row">
-                <polymux-button title="Notification" notify="polymux-notification" notify-message="This is an amazing notification message"></polymux-button>
+                <polymux-button title="Notification" level="warning"
+                 notify="polymux-notification" notify-message="This is an amazing notification message"></polymux-button>
                 <polymux-button level="success" title="Dialog" notify="polymux-dialog" notify-message="This is an amazing dialog"></polymux-button>
             </polymux-block>
         </polymux-container>

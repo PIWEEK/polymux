@@ -7,3 +7,16 @@ body {
 * {
     box-sizing: border-box;
 }
+
+@keyframes dropdownFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
