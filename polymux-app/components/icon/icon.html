@@ -7,10 +7,6 @@
         <style include="shared-styles"></style>
         <style>
             :host {
-                width: 3rem;
-                height: 3rem;
-                fill: #000;
-                flex-basis: 3rem;
                 flex-grow: 0!important;
                 flex-shrink: 0!important;
             }
@@ -19,7 +15,9 @@
                 height: 100%;
             }
         </style>
-        <img src$="images/{{icon}}.svg" alt="{{icon}}">
+        <div style$="width:{{width}}; height:{{height}};" title="{{icon}}">
+            <img src$="images/{{icon}}.svg" alt$="{{icon}}">
+        </div>
     </template>
 
     <script>
@@ -28,6 +26,14 @@
             properties: {
                 icon: {
                     type: String
+                },
+                width: {
+                    type: String,
+                    value: "3rem"
+                },
+                height: {
+                    type: String,
+                    value: "3rem"
                 }
             }
         });
