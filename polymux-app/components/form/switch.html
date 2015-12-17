@@ -1,0 +1,115 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../shared-styles/shared-styles.html">
+
+<dom-module id="polymux-switch">
+    <style include="shared-styles"></style>
+    <template>
+        <style>
+            fieldset {
+                margin-bottom: 1rem;
+                padding: 0;
+                border: none;
+
+            }
+            .switch {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            label {
+                flex: 1;
+            }
+
+            .check {
+                flex-grow: 0;
+                background-color: #ddd;
+                border-radius: 2px;
+                cursor: pointer;
+                display: inline-block;
+                height: 1.5rem;
+                overflow: hidden;
+                position: relative;
+                width: 65px;
+                flex-basis: 65px;
+            }
+
+            input {
+                width: 65px;
+                height: 40px;
+                opacity: 0;
+                vertical-align: middle;
+                cursor: pointer;
+                position: absolute;
+                top: -10px;
+                z-index: 999;
+            }
+            input + div {
+                background-color: #111;
+                height: 25px;
+                transition: all .2s linear;
+                width: 50%;
+            }
+            input:disabled + div {
+                background-color: var(--disabled-color);
+                height: 25px;
+                transition: all .2s linear;
+                width: 50%;
+            }
+            input:checked + div {
+                background-color: #9dce0a;
+                margin-left: 50%;
+                transition: all .2s linea
+            }
+        </style>
+        <fieldset>
+            <div class="switch">
+                <label for="{{name}}">{{text}}</label>
+                <div class="check">
+                    <input name="{{name}}" type="checkbox">
+                    <div></div>
+                </div>
+            </div>
+        </fieldset>
+    </template>
+
+    <script>
+        Polymer({
+            is: "polymux-switch",
+            properties: {
+                name: {
+                    type: String
+                },
+                text: {
+                    type: String,
+                    value: "Fill the text property to explain this checkbox option"
+                },
+                checked: {
+                    type: Boolean
+                },
+                disabled: {
+                    type: Boolean
+                },
+                required: {
+                    type: Boolean
+                }
+            },
+            ready: function() {
+                console.log(this);
+                if (this.hasAttribute('disabled')) {
+                    input = Polymer.dom(this.root).querySelector('input');
+                    input.setAttribute('disabled', "");
+                };
+                if (this.hasAttribute('required')) {
+                    input = Polymer.dom(this.root).querySelector('input');
+                    input.setAttribute('required', "");
+                };
+                if (this.hasAttribute('checked')) {
+                    input = Polymer.dom(this.root).querySelector('input');
+                    input.setAttribute('checked', "checked");
+                };
+            }
+        });
+    </script>
+
+</dom-module>
