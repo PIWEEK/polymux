@@ -5,9 +5,12 @@
     <link rel="import" href="partials/head.html">
     <title>Polymux</title>
     <link rel="import" href="partials/components.html">
+    <link rel="stylesheet" href="https://i.icomoon.io/public/temp/5108215e2a/Polymux/style-svg.css">
+    <script src="https://i.icomoon.io/public/temp/5108215e2a/Polymux/svgxuse.js"></script>
 </head>
 
 <body>
+    <link rel="import" href="images/symbols.html">
     <polymux-app>
         <polymux-notification></polymux-notification>
         <polymux-dialog id="login-dialog" message="Login"></polymux-dialog>
@@ -30,6 +33,16 @@
             <polymux-block distribution="flex-start" direction="row">
                 <polymux-button title="Notification" level="warning" notify="polymux-notification" notify-message="This is an amazing notification message"></polymux-button>
                 <polymux-button level="success" title="Dialog" notify="#other-dialog" notify-message="This is an amazing dialog"></polymux-button>
+            </polymux-block>
+            <polymux-block distribution="flex-start" direction="row">
+                <polymux-icon icon="add"></polymux-icon>
+                <polymux-icon icon="archive"></polymux-icon>
+                <polymux-icon icon="attachment"></polymux-icon>
+                <polymux-icon icon="backlog"></polymux-icon>
+                <polymux-icon icon="briefcase"></polymux-icon>
+                <polymux-icon icon="bubble"></polymux-icon>
+                <polymux-icon icon="clipboard"></polymux-icon>
+                <polymux-icon icon="bug"></polymux-icon>
             </polymux-block>
         </polymux-container>
     </polymux-app>

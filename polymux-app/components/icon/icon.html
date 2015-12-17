@@ -1,0 +1,35 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../shared-styles/shared-styles.html">
+
+<dom-module id="polymux-icon">
+
+    <template>
+        <style include="shared-styles"></style>
+        <style>
+            :host {
+                width: 3rem;
+                height: 3rem;
+                fill: #000;
+                flex-basis: 3rem;
+                flex-grow: 0!important;
+                flex-shrink: 0!important;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <img src$="images/{{icon}}.svg" alt="{{icon}}">
+    </template>
+
+    <script>
+        Polymer({
+            is: "polymux-icon",
+            properties: {
+                icon: {
+                    type: String
+                }
+            }
+        });
+    </script>
+</dom-module>
