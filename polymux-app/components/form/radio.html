@@ -1,7 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../shared-styles/shared-styles.html">
 
-<dom-module id="polymux-checkbox">
+<dom-module id="polymux-radio">
     <style include="shared-styles"></style>
     <template>
         <style>
@@ -16,22 +16,25 @@
                 vertical-align: sub;
             }
         </style>
-        <fieldset class="checkbox">
-            <input type="checkbox" id$="{{name}}" value="">
-            <label for$="{{name}}">{{text}}</label>
+        <fieldset>
+            <input type="radio" name$="{{name}}" id$="{{id}}" value="">
+            <label for$="{{id}}">{{text}}</label>
         </fieldset>
     </template>
 
     <script>
         Polymer({
-            is: "polymux-checkbox",
+            is: "polymux-radio",
             properties: {
+                id: {
+                    type: String
+                },
                 name: {
                     type: String
                 },
                 text: {
                     type: String,
-                    value: "Fill the text property to explain this checkbox option"
+                    value: "Fill the text property to explain this radio option"
                 },
                 checked: {
                     type: Boolean
