@@ -1,0 +1,59 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../shared-styles/shared-styles.html">
+
+<dom-module id="polymux-checkbox">
+    <style include="shared-styles"></style>
+    <template>
+        <style>
+            fieldset {
+                margin-bottom: 1rem;
+                padding: 0;
+                border: none;
+            }
+        </style>
+        <fieldset>
+            <input type="checkbox" id$="{{name}}" value="">
+            <label for$="{{name}}">{{text}}</label>
+        </fieldset>
+    </template>
+
+    <script>
+        Polymer({
+            is: "polymux-checkbox",
+            properties: {
+                name: {
+                    type: String
+                },
+                text: {
+                    type: String,
+                    value: "Fill the text property to explain this checkbox option"
+                },
+                checked: {
+                    type: Boolean
+                },
+                disabled: {
+                    type: Boolean
+                },
+                required: {
+                    type: Boolean
+                }
+            },
+            ready: function() {
+                console.log(this);
+                if (this.hasAttribute('disabled')) {
+                    input = Polymer.dom(this.root).querySelector('input');
+                    input.setAttribute('disabled', "");
+                };
+                if (this.hasAttribute('required')) {
+                    input = Polymer.dom(this.root).querySelector('input');
+                    input.setAttribute('required', "");
+                };
+                if (this.hasAttribute('checked')) {
+                    input = Polymer.dom(this.root).querySelector('input');
+                    input.setAttribute('checked', "checked");
+                };
+            }
+        });
+    </script>
+
+</dom-module>
