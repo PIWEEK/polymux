@@ -26,7 +26,7 @@
                 margin: 0;
             }
         </style>
-        <a href="index.html">
+        <a href="{{link}}">
             <template is="dom-if" if="{{imageUrl}}">
                 <img src="{{imageUrl}}" alt="{{projectName}}" />
             </template>
@@ -44,6 +44,10 @@
                 projectName: {
                     type: String,
                     value: "Project Name"
+                },
+                link: {
+                    type: String,
+                    value: "index.html"
                 }
             }
         });

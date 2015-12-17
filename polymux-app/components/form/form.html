@@ -12,7 +12,7 @@
     </style>
 
     <template>
-        <form role="form" action="{{action}}">
+        <form role="form" action="{{link}}">
             <h1>{{title}}</h1>
             <content></content>
         </form>
@@ -22,7 +22,7 @@
         Polymer({
             is: "polymux-form",
             properties: {
-                action: {
+                link: {
                     type: String,
                     value: "index.html"
                 },
