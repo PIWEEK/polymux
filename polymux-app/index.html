@@ -1,42 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Polymux</title>
+    <title>My Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="import" href="partials/head.html">
     <link rel="import" href="partials/components.html">
-    <link rel="stylesheet" href="https://i.icomoon.io/public/temp/5108215e2a/Polymux/style-svg.css">
-    <script src="https://i.icomoon.io/public/temp/5108215e2a/Polymux/svgxuse.js"></script>
 </head>
 
 <body>
     <polymux-app>
-        <polymux-notification></polymux-notification>
-        <polymux-dialog id="login-dialog" message="Login"></polymux-dialog>
-        <polymux-dialog id="other-dialog"></polymux-dialog>
-        <polymux-navigation-bar distribution="space-between">
-            <polymux-logo project-name="polymux"></polymux-logo>
-            <nav>
-                <polymux-tab tab-name="Form" link="form.html"></polymux-tab>
-                <polymux-tab tab-name="Login" notify="#login-dialog"></polymux-tab>
-            </nav>
-        </polymux-navigation-bar>
-        <polymux-container>
-            <polymux-block title="Header" direction="row">
-                <polymux-image type="nightlife" width="480"></polymux-image>
-                <polymux-paragraph>
-                    'I can't help it,' said Alice very meekly: 'I'm growing.' 'You've no right to grow here,' said the Dormouse. 'Don't talk nonsense,' said Alice more boldly: 'you know you're growing too.' 'Yes, but I grow at a reasonable pace,' said the Dormouse: 'not
-                    in
-                </polymux-paragraph>
-            </polymux-block>
-            <polymux-block distribution="flex-start" direction="row">
-                <polymux-button title="Notification" level="warning" notify="polymux-notification" notify-message="This is an amazing notification message"></polymux-button>
-                <polymux-button level="success" title="Dialog" notify="#other-dialog" notify-message="This is an amazing dialog"></polymux-button>
-            </polymux-block>
-            <polymux-block distribution="flex-start" direction="row">
-                <polymux-icon icon="add" width="3rem" height="3rem"></polymux-icon>
-                <polymux-icon icon="archive" width="3rem" height="3rem"></polymux-icon>
-            </polymux-block>
+        <polymux-container width="480px">
+            <polymux-logo image-url="images/polymux.png"></polymux-logo>
+            <polymux-form link="home.html" title="Login">
+                <polymux-input type="email" placeholder="Email" required></polymux-input>
+                <polymux-input type="password" placeholder="Password" required></polymux-input>
+                <polymux-input type="submit"></polymux-input>
+            </polymux-form>
         </polymux-container>
     </polymux-app>
 </body>

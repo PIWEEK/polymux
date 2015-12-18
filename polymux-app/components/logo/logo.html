@@ -6,18 +6,14 @@
     <template>
         <style include="shared-styles"></style>
         <style>
-            :host {
-                display: inline-flex;
-                align-content: center;
-            }
-
             a {
-                color: var(--text-invert-color, #fff);
+                color: var(--secondary-color, #fff);
                 text-decoration: none;
+                display: block;
             }
-
             img {
-                max-height: 2.5rem;
+                height: 100%;
+                width: 100%;
             }
 
             h1 {
@@ -28,9 +24,11 @@
         </style>
         <a href="{{link}}">
             <template is="dom-if" if="{{imageUrl}}">
-                <img src="{{imageUrl}}" alt="{{projectName}}" />
+                <img src="{{imageUrl}}" alt="{{title}}" />
             </template>
-            <h1>{{projectName}}</h1>
+            <template is="dom-if" if="{{title}}">
+                <h1>{{title}}</h1>
+            </template>
         </a>
     </template>
 
@@ -41,9 +39,8 @@
                 imageUrl: {
                     type: String,
                 },
-                projectName: {
+                title: {
                     type: String,
-                    value: "Project Name"
                 },
                 link: {
                     type: String,

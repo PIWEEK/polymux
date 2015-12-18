@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="import" href="partials/head.html">
+    <link rel="import" href="partials/components.html">
+</head>
+
+<body>
+    <polymux-app>
+        <polymux-notification></polymux-notification>
+        <polymux-dialog>
+            <polymux-image type="business"></polymux-image>
+        </polymux-dialog>
+        <polymux-navigation-bar distribution="space-between">
+            <polymux-logo title="Polymux"></polymux-logo>
+            <nav>
+                <polymux-tab tab-name="Login"></polymux-tab>
+                <polymux-tab tab-name="Profile" link="profile.html"></polymux-tab>
+            </nav>
+        </polymux-navigation-bar>
+        <polymux-container>
+            <polymux-block distribution="space-between" direction="row">
+                <polymux-block title="Features">
+                    <polymux-image type="business"></polymux-image>
+                    <polymux-paragraph>
+                        So they began solemnly dancing round and round Alice, every now and  then treading on her toes when they passed too close, and waving their  forepaws to mark the time, while the Mock Turtle sang this, very slowly  and sadly:&mdash; '"Will you walk a little faster?" said a whiting to a snail.   "There's a porpoise close behind us, and he's
+                    </polymux-paragraph>
+                    <polymux-button title="Profile" link="profile.html"></polymux-button>
+                </polymux-block>
+                <polymux-block title="Service oriented">
+                    <polymux-image type="nightlife"></polymux-image>
+                    <polymux-paragraph>
+                    "Will you walk a little faster?" said a whiting to a snail.   "There's a porpoise close behind us, and he's
+                    </polymux-paragraph>
+                    <polymux-button title="Notification" level="success" notify="polymux-notification" notify-message="Yes, you are a resource!"></polymux-button>
+                </polymux-block>
+                <polymux-block title="Resources">
+                    <polymux-image></polymux-image>
+                    <polymux-paragraph>
+                        So they began solemnly dancing round and round Alice, every now and  then treading on her toes when they passed too close, and waving their  forepaws to mark the time, while the Mock Turtle sang this, very slowly  and sadly:&mdash;
+                    </polymux-paragraph>
+                    <polymux-button title="Notification" level="warning" notify="polymux-dialog" notify-message="This is a dialog"></polymux-button>
+                </polymux-block>
+            </polymux-block>
+        </polymux-container>
+    </polymux-app>
+</body>
+
+</html>

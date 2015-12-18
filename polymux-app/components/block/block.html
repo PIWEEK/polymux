@@ -11,6 +11,7 @@
         }
         .block-item ::content > * {
             padding: .5rem;
+            flex: 1;
         }
         .block-item ::content > *:first-child {
             padding-left: 0;
@@ -28,7 +29,7 @@
     <template>
         <section>
             <template is="dom-if" if="{{title}}">
-                <h1>{{title}}</h1>
+                <h2>{{title}}</h2>
             </template>
             <div class="block-item" style$="justify-content: {{distribution}}; flex-direction: {{direction}};" >
                 <content></content>

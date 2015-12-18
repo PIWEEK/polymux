@@ -1,0 +1,138 @@
+<!-- Required parent -->
+<polymux-app></polymux-app>
+
+<!-- Theming -->
+<!-- shared-styles -->
+<!--
+    --primary-color: #761cec;
+    --secondary-color: #FF9900;
+    --disabled-color: #ccc;
+    --text-color: #111;
+    --text-invert-color: #fff;
+    --success-color: #73d216;
+    --warning-color: #fcaf3e;
+    --error-color: #cc0000;
+-->
+
+<polymux-notification id="" message="" display="visible"></polymux-notification>
+
+    <polymux-button title="Notification" level="warning" notify="polymux-notification" notify-message="Message"></polymux-button>
+<!--
+    id=""
+    message=""
+    display: visible
+-->
+
+<polymux-dialog id="" message="" display="visible"><!-- Hi! I am the content --></polymux-dialog>
+
+    <polymux-button level="success" title="Dialog" notify="#other-dialog" notify-message="Message"></polymux-button>
+    <polymux-tab tab-name="Login" notify="#other-dialog"></polymux-tab>
+<!--
+    id=""
+    message=""
+    display: visible
+-->
+
+<polymux-navigation-bar distribution="space-between">
+    <nav>
+        <polymux-tab tab-name="Form" link="form.html"></polymux-tab>
+        <polymux-tab tab-name="Login" notify="#login-dialog"></polymux-tab>
+    </nav>
+</polymux-navigation-bar>
+<!--
+    distribution: flex-start ... flex-start | flex-end | space-between
+    tab-name: ""
+    link: index.html
+    notify: ""
+-->
+
+<polymux-logo project-name="" image-url="images/logo.svg" link=""></polymux-logo>
+    <!--
+        project-name: ""
+        image-url: ""
+        link: index.html
+    -->
+
+<polymux-container width="1200px"><!-- Hi! I am the content --></polymux-container>
+    <!--
+        width: 1200px
+    -->
+
+<polymux-block title="" direction="column"><!-- Hi! I am the content --></polymux-block>
+    <!--
+        title: ""
+        distribution: flex-start ... flex-start | flex-end | space-between
+        direction: column ... column | row
+    -->
+
+<polymux-image type="cats" width="640" height="480"></polymux-image>
+    <!-- type:cats ... abstract | city | people | transport | animals | nature | business | nightlife | sports | cats | fashion | technics
+    width: 640
+    Height: 480
+    -->
+
+<polymux-button title="" level="" notify="" notify-message=""></polymux-button>
+<polymux-button title="" level="" link=""></polymux-button>
+    <!--
+        title: ""
+        level: success | warning | error
+        notify: ""
+        notify-message: ""
+        link: index.html
+    -->
+
+<polymux-form title="" link="index.html"><!-- Hi! I am the content --></polymux-form>
+<!--
+    title: ""
+    link: index.html
+-->
+
+<polymux-input required disabled type="text" name="" placeholder=""></polymux-input>
+<!--
+    name: ""
+    placeholder: index.html
+    required
+    disabled
+    type: text ... text | Color | email | Number | password | date | range | submit
+-->
+
+<polymux-checkbox name="" text="" checked required disabled></polymux-checkbox>
+<!--
+    name: ""
+    text: ""
+    required
+    disabled
+    checked
+-->
+
+<polymux-switch id="" name="" text="" checked required disabled></polymux-switch>
+<!--
+    id: ""
+    name: ""
+    text: ""
+    required
+    disabled
+    checked
+-->
+
+<polymux-radio id="" name="" text="" checked required disabled></polymux-radio>
+<!--
+    id: ""
+    name: ""
+    text: ""
+    required
+    disabled
+    checked
+-->
+
+<polymux-icon icon="icon-name" width="3rem" height="3rem"></polymux-icon>
+<!--
+    icon: "" >> https://github.com/PIWEEK/polymux/wiki/Icon
+    width: 3rem
+    height: 3rem
+-->
+
+<polymux-paragraph link="index.html"><!-- Hi! I am the content --></polymux-paragraph>
+<!--
+    link: index.html
+-->
